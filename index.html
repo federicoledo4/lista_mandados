@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista De Compras</title>
+    <script src="Lista.js"></script>
+</head>
+<body>
+
+    <div style='background-image: url("mercado.jpg"); width: 100%; height: 100%; position: absolute; background-repeat: no-repeat; overflow: hidden; background-size: cover;'>
+        <div>
+        <button onclick="obiamente('Leche', 35, 1)">Leche</button>
+        <button onclick="obiamente('Pan', 30, 1)">Pan</button>
+        <button onclick="obiamente('Café', 30, 1)">Café</button>
+        <button onclick="obiamente('Azucar', 20, 1)">Azucar</button>
+        </div>
+        <div style="text-align: center;">
+            <label for="cosas">Cosa:</label>
+            <input type="text" name="cosas" id="cosa">
+            <label for="costo">Precio: $</label>
+            <input type="number" name="costo" id="precio">
+            <label for="Cant">Cantidad: </label>
+            <input type="number" name="Cant" id="cant">
+            <button onclick="añadir()">Añadir</button><br>
+            <button onclick="limpiar()">Limpiar</button>
+        </div>
+        <br>
+        <br>
+        <div style='margin-left: 27.5%;
+        background-position: center;
+        position: absolute;
+        top: 10%;
+        height: 10%;
+        width: 45%;
+        min-block-size: 40%;
+        max-zoom: 100%;
+        text-align: center;
+        
+        user-zoom: fixed;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.205);'>
+            
+    
+            <table border style="color: black; background-color: white; width: 100%;">
+                <thead>
+                    <th style="color: black; background-color: white;">
+                        Cosas
+                    </th>
+                    <th style="color: black; background-color: white;">
+                        precios
+                    </th>
+                    <th>
+                        Cantidad
+                    </th>
+                </thead>
+                <tbody id="cuerpoTabla">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th style="color: black; background-color: white;">Total: </th>
+                        <th id="total" style="color: black; background-color: white;">
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
