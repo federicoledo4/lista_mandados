@@ -14,14 +14,14 @@
 
     <div style='background-image: url("mercado.jpg"); width: 100%; height: 100%; position: absolute; background-repeat: no-repeat; overflow: scroll; background-size: cover;'>
         <div>
-        <button onclick="obiamente('Leche', 35, 1);">Leche</button>
+        <button onclick="obiamente('Leche', 38, 1);">Leche</button>
         <button onclick="obiamente('Pan', 30, 1);">Pan</button>
         <button onclick="obiamente('Café', 30, 1);">Café</button>
         <button onclick="obiamente('Azucar', 20, 1);">Azucar</button>
         </div>
         <div style="text-align: center;">
             <label for="cosas">Cosa:</label>
-            <input type="text" name="cosas" id="cosa" onfocus="hablar('qué quieres')">
+            <input type="search" name="cosas" id="cosa" onfocus="hablar('qué quieres')">
             <label for="costo">Precio: $</label>
             <input type="number" name="costo" id="precio" style="width: 1.1cm;" value="1" onfocus="hablar('cuánto cuesta')">
             <label for="Cant">Cantidad: </label>
@@ -42,13 +42,8 @@
         user-zoom: fixed;
         color: white;
         background-color: rgba(0, 0, 0, 0.205);'>
-            <br>
-            <br>
-            <br>
     
             <table border style="color: black; background-color: white; width: 100%;">
-                <br>
-                <br>
                 <thead>
                     <th style="color: black; background-color: white;">
                         Cosas
@@ -64,29 +59,11 @@
                     </th>
                 </thead>
                 <tbody id="cuerpoTabla">
-                    <tr>
-                        <td><input type="text"  value="cereales" name="cosa" style="color: black; background-color: white;"></td>
-                        <td><input type="text"  value="2" name="precio" style="color: black; background-color: white;"></td>
-                        <td><input type="text"  value="4" name="cantidad" style="color: black; background-color: white;"></td>
-                        <td><input type="text"  value="" name="subtotal" style="color: black; background-color: white;"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" value="queso" name="cosa" style="color: black; background-color: white;"></td>
-                            <td><input type="text" value="2" name="precio" style="color: black; background-color: white;"></td>
-                            <td><input type="text" value="3" name="cantidad" style="color: black; background-color: white;"></td>
-                            <td><input type="text" value="" name="subtotal" style="color: black; background-color: white;"></td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" value="gato" name="cosa" style="color: black; background-color: white;"></td>
-                            <td><input type="text" value="5" name="precio" style="color: black; background-color: white;"></td>
-                            <td><input type="text" value="5" name="cantidad" style="color: black; background-color: white;"></td>
-                            <td><input type="text" value="" name="subtotal" style="color: black; background-color: white;"></td>
-                        </tr>
                 </tbody>
                 <tfoot>
                     <tr>
-                        <th style="color: black; background-color: white;">Total: </th>
-                        <th id="total" style="color: black; background-color: white;">
+                        <th style="width: 1.5cm;color: black; background-color: white;">Total: </th>
+                        <th id="total" style="width: 1.5cm;color: black; background-color: white;">
                         </th>
                     </tr>
                 </tfoot>
