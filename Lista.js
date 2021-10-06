@@ -29,7 +29,7 @@ function limpiar(){
     Lista=[]
     Lista2=[]
     Lista3=[]
-    hablar('limpiado')
+    
 };
 function limpiar2(){
     document.getElementById("cuerpoTabla").innerHTML="";
