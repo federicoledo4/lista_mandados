@@ -48,6 +48,7 @@ function obiamente(articulo, precioCosa, cantidad){
             <td><input type="text" value="`+ cosa.cantidad +`" name="cantidad" style="color: black; background-color: white;"></td>
             <td><input type="text" value="`+ (cosa.precioCosa*cosa.cantidad) +`" name="subtotal" style="color: black; background-color: white;"></td>
             </tr>`; 
+            hablar(cosa.nombre+"añadido")
 }
 function añadir(){
     
@@ -58,7 +59,7 @@ function añadir(){
     if(valor.value===cosa.nombre){alert("repetiste "+ cosa.nombre);hablar("repetiste"+cosa.nombre);return;}}
     obiamente(cosa.nombre, cosa.precioCosa, cosa.cantidad);
     document.getElementById("total").innerHTML=total;
-    hablar(cosa.nombre+"añadido")
+    
 };
 function calcular(){let preciosf=document.getElementsByName("precio");let cantidadesf=document.getElementsByName("cantidad");let subtotalesf=document.getElementsByName("subtotal");let total=document.getElementById("total");let contador=0;let suma=0
 while(contador<subtotalesf.length){subtotalesf[contador].value=parseInt(preciosf[contador].value) * parseInt(cantidadesf[contador].value);suma+=parseInt(subtotalesf[contador].value);total.innerHTML=suma; contador+=1;}};setInterval(calcular, 1000)
