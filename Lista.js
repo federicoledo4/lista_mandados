@@ -6,6 +6,20 @@ let Lista=[]
 let Lista2=[]
 let Lista3=[]
 let cosa={nombre:"", precioCosa:"", cantidad:""}
+let contadorEstetico=0
+
+function alertMeme(imgsrc, tittleText, text){
+    Swal.fire({
+        title: tittleText,
+        text: text,
+        imageUrl: imgsrc,
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+    });
+  }
+
+
 
 function borrar(){
     localStorage.removeItem("cosas")
@@ -14,6 +28,7 @@ function borrar(){
 }
 
 function guardar(){
+    if (Lista.length>0){
     let cosas=[]
     let precios=[]
     let cantidades=[]
@@ -29,6 +44,10 @@ function guardar(){
     localStorage.setItem("cosas", JSON.stringify(cosas));
     localStorage.setItem("precios", JSON.stringify(precios));
     localStorage.setItem("cantidades", JSON.stringify(cantidades));
+    hablar("guardado exitosamente")
+    }else{borrar();
+    hablar("guardado exitosamente");
+    }
 }
 
 function obtenerVoces(){
@@ -110,4 +129,12 @@ if (localStorage.cosas!==undefined){
         contador+=1;
     }
 }
+document.body.addEventListener("click", ()=>{if(contador2===0){
+    hablar("cargado exitosamente");
+    }contador2+=1;});
+    document.body.addEventListener("click",()=>{
+    if (contador2===20&&contadorEstetico===0){
+        document.body.innerHTML+=`<audio id="audio" src="quePesado.mp3" autoplay></audio>`
+        contadorEstetico+=1
+    }})
 });
