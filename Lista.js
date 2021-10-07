@@ -136,5 +136,17 @@ document.body.addEventListener("click", ()=>{if(contador2===0){
     if (contador2===20&&contadorEstetico===0){
         document.body.innerHTML+=`<audio id="audio" src="quePesado.mp3" autoplay></audio>`
         contadorEstetico+=1
+        setTimeout(() => {
+            hablar("Tomá música de ascensor")
+        }, 4000);
+        setTimeout(() => {
+            document.getElementById("audio").src="ascensor.mp3"
+        }, 10000);
     }})
+    setTimeout(() => {
+        hablar("Tomá música de ascensor")
+    }, 4000);
+    setTimeout(() => {
+        document.getElementById("audio").src="ascensor.mp3"
+    }, 10000);
 });
