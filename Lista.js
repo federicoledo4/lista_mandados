@@ -7,6 +7,30 @@ let Lista2=[]
 let Lista3=[]
 let cosa={nombre:"", precioCosa:"", cantidad:""}
 
+function borrar(){
+    localStorage.removeItem("cosas")
+    localStorage.removeItem("precios")
+    localStorage.removeItem("cantidades")
+}
+
+function guardar(){
+    let cosas=[]
+    let precios=[]
+    let cantidades=[]
+    for (item of Lista[0]){
+        cosas.push(item.value)
+    }
+    for (item of Lista[1]){
+        precios.push(parseInt(item.value))
+    }
+    for (item of Lista[2]){
+        cantidades.push(parseInt(item.value))
+    }
+    localStorage.setItem("cosas", JSON.stringify(cosas));
+    localStorage.setItem("precios", JSON.stringify(precios));
+    localStorage.setItem("cantidades", JSON.stringify(cantidades));
+}
+
 function obtenerVoces(){
     vocesDisponibles = window.speechSynthesis.getVoices();
     }
@@ -50,6 +74,10 @@ function obiamente(articulo, precioCosa, cantidad){
             <td><input type="number" value="`+ cosa.cantidad +`" name="cantidad" style="width: 1.2cm;color: black; background-color: white;"></td>
             <td><input type="text" value="`+ (cosa.precioCosa*cosa.cantidad) +`" name="subtotal" style=width: 1.5cm;"color: black; background-color: white;"></td>
             </tr>`; 
+            Lista=[]
+            Lista.push(document.getElementsByName("cosa"))
+            Lista.push(document.getElementsByName("precio"))
+            Lista.push(document.getElementsByName("cantidad"))
             hablar(cosa.nombre+"añadido")
 }
 function añadir(){
@@ -68,3 +96,18 @@ while(contador<subtotalesf.length){subtotalesf[contador].value=parseInt(preciosf
 function comprar(){
     hablar("serían un total de"+document.getElementById("total").innerHTML+"pesos")
 }
+document.addEventListener("DOMContentLoaded", function(e){
+if (localStorage.cosas!==undefined){
+    let cosas = JSON.parse(localStorage.getItem("cosas"));
+    let precios = JSON.parse(localStorage.getItem("precios"));
+    let cantidades = JSON.parse(localStorage.getItem("cantidades"));
+    let contador=0
+    while(contador<cosas.length){
+        cosas = JSON.parse(localStorage.getItem("cosas"));
+        precios = JSON.parse(localStorage.getItem("precios"));
+        cantidades = JSON.parse(localStorage.getItem("cantidades"));
+        obiamente(cosas[contador], precios[contador], cantidades[contador]);
+        contador+=1;
+    }
+}
+});
