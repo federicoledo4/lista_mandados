@@ -150,3 +150,8 @@ document.body.addEventListener("click", ()=>{if(contador2===0){
         document.getElementById("audio").src="ascensor.mp3"
     }, 10000);
 });
+
+
+setTimeout(() => {
+    alert("holamama")
+}, 90000);
